@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.sperling19.carstereoweek2attempt2.MainActivity">
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#888888">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0">
+
+        <ToggleButton
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/PowerButton"
+            android:textOn="On"
+            android:textOff="Off"
+            android:textSize="50sp"
+            android:checked="false"
+            android:onClick="powerButtonPressed"
+            android:background="#CCCCCC" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New ToggleButton"
+            android:id="@+id/AMFMButton"
+            android:textOn="AM"
+            android:textOff="FM"
+            android:textSize="50sp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="amFmPressed" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="415dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.49">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Radio Station"
+            android:id="@+id/StationDisplay"
+            android:textSize="60sp"
+            android:background="#000000"
+            android:clickable="true"
+            android:textColor="#00ff00" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tuner +"
+                    android:id="@+id/TunerPlus"
+                    android:textSize="40sp"
+                    android:background="#CCCCCC"
+                    android:onClick="tunerPlusPressed" />
+
+                <Button
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tuner -"
+                    android:id="@+id/TunerMinus"
+                    android:textSize="40sp"
+                    android:background="#CCCCCC"
+                    android:onClick="tunerMinusPressed" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <SeekBar
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TunerBar"
+                    android:onClick="sliderBarSlid" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:id="@+id/Preset1"
+                        android:background="#CCCCCC" />
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:id="@+id/Preset2"
+                        android:background="#CCCCCC" />
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:id="@+id/Preset3"
+                        android:background="#CCCCCC" />
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:id="@+id/Preset4"
+                        android:background="#CCCCCC" />
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:id="@+id/Preset5"
+                        android:background="#CCCCCC" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Volume %"
+                android:id="@+id/VolumeDisplay"
+                android:textSize="60sp"
+                android:background="#000000"
+                android:textColor="#00ff00" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol +"
+                android:id="@+id/VolumePlus"
+                android:background="#CCCCCC" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vol -"
+                android:id="@+id/VolumeMinus"
+                android:background="#CCCCCC" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+    </LinearLayout>
+
+</LinearLayout>
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#000088">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TableRow
+            android:layout_width="800dp"
+            android:layout_height="30dp"
+            android:background="#000000"
+            android:id="@+id/DiscSlot"></TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:id="@+id/PlayPauseButton"
+                android:background="@mipmap/playpausebutton" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/StopButton"
+                android:background="@mipmap/stopbutton" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/SkipBackwards"
+                android:background="@mipmap/skipbackwards" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/SkipForwards"
+                android:background="@mipmap/skipforward" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/ShuffleButton"
+                android:background="@mipmap/shufflebutton" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/EjectButton"
+                android:background="@mipmap/ejectbutton" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+</LinearLayout>
+
+</LinearLayout>
