@@ -137,35 +137,40 @@ tools:context="com.example.sperling19.carstereoweek2attempt2.MainActivity">
                         android:layout_height="wrap_content"
                         android:text="1"
                         android:id="@+id/Preset1"
-                        android:background="#CCCCCC" />
+                        android:background="#CCCCCC"
+                        android:onClick="presetButtonPressed" />
 
                     <Button
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
                         android:text="2"
                         android:id="@+id/Preset2"
-                        android:background="#CCCCCC" />
+                        android:background="#CCCCCC"
+                        android:onClick="presetButtonPressed" />
 
                     <Button
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
                         android:text="3"
                         android:id="@+id/Preset3"
-                        android:background="#CCCCCC" />
+                        android:background="#CCCCCC"
+                        android:onClick="presetButtonPressed" />
 
                     <Button
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
                         android:text="4"
                         android:id="@+id/Preset4"
-                        android:background="#CCCCCC" />
+                        android:background="#CCCCCC"
+                        android:onClick="presetButtonPressed" />
 
                     <Button
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:id="@+id/Preset5"
-                        android:background="#CCCCCC" />
+                        android:background="#CCCCCC"
+                        android:onClick="presetButtonPressed" />
 
                 </LinearLayout>
 

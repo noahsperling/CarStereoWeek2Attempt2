@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     private boolean powerOn = true;
     private boolean fm = true;
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar tuner;
     private int fmValue = 0;
     private int amValue = 0;
+    int[] fmPresets = {28, 48, 68, 88, 108}; // we originally gave it 5 preset buttons and were
+    int[] amPresets =  {20, 70, 120, 170, 220}; //given the ok, so we are only implementing 5 presets
 
 
 
@@ -52,6 +54,42 @@ public class MainActivity extends AppCompatActivity {
         powerButton = (Button)findViewById(R.id.PowerButton);
         tuner = (SeekBar)findViewById(R.id.TunerBar);
         tunerUpdateFm(fmValue);
+        one.setOnLongClickListener(this);
+        two.setOnLongClickListener(this);
+        three.setOnLongClickListener(this);
+        four.setOnLongClickListener(this);
+        five.setOnLongClickListener(this);
+        tuner.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                if(powerOn) {
+                    if (fm) {
+                        fmValue = tuner.getProgress();
+                        tunerUpdateFm(fmValue);
+                    } else {
+                        amValue = tuner.getProgress();
+                        tunerUpdateAm(amValue);
+                    }
+                } else {
+                    if(fm) {
+                        tuner.setProgress(fmValue);
+                    } else {
+                        tuner.setProgress(amValue);
+                    }
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
 
@@ -183,6 +221,64 @@ public class MainActivity extends AppCompatActivity {
         temp += p;
         display.setText(""+temp+ " AM");
     }
+    public void presetButtonPressed(View V) {
+         if(powerOn) {
+             if (V.equals(one)) {
+                presetApply(fmPresets[0], amPresets[0]);
+             } else if (V.equals(two)) {
+                 presetApply(fmPresets[1], amPresets[1]);
+             } else if (V.equals(three)) {
+                 presetApply(fmPresets[2], amPresets[2]);
+             } else if (V.equals(four)) {
+                 presetApply(fmPresets[3], amPresets[3]);
+             } else if (V.equals(five)) {
+                 presetApply(fmPresets[4], amPresets[4]);
+             }
+         } else {
+             return;
+         }
+    }
+    private void presetApply(int fmPres, int amPres){
+        if(fm){
+            tuner.setProgress(fmPres);
+            tunerUpdateFm(fmPres);
+            fmValue = fmPres;
+        } else {
+            tuner.setProgress(amPres);
+            tunerUpdateAm(amPres);
+            amValue = amPres;
+        }
 
+    }
+    public boolean onLongClick(View V) {
+        if (powerOn) {
+            if(fm) {
+                if (V.equals(one)) {
+                    fmPresets[0] = fmValue;
+                } else if (V.equals(two)) {
+                    fmPresets[1] = fmValue;
+                } else if (V.equals(three)) {
+                    fmPresets[2] = fmValue;
+                } else if (V.equals(four)) {
+                    fmPresets[3] = fmValue;
+                } else if (V.equals(five)) {
+                    fmPresets[4] = fmValue;
+                }
+            } else {
+                if (V.equals(one)) {
+                    amPresets[0] = amValue;
+                } else if (V.equals(two)) {
+                    amPresets[1] = amValue;
+                } else if (V.equals(three)) {
+                    amPresets[2] = amValue;
+                } else if (V.equals(four)) {
+                    amPresets[3] = amValue;
+                } else if (V.equals(five)) {
+                    amPresets[4] = amValue;
+                }
+            }
+        }
+        return true;
+    }
 
 }
